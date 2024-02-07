@@ -1,1 +1,0 @@
-SloaneTribble/3.4-self-hosted-actions-runner-docker
