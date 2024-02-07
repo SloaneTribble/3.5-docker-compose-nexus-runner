@@ -48,11 +48,6 @@ RUN chown -R GHA:GHA /home/GHA
 RUN chown GHA:GHA config-and-run.sh
 RUN chmod +x config-and-run.sh
 
-# Set environment variables by creating mount point for repo and token
-RUN --mount=type=secret,id=REPO,dst=/run/secrets/repo.txt cat /run/secrets/repo.txt
-RUN --mount=type=secret,id=TOKEN,dst=/run/secrets/token.txt cat /run/secrets/token.txt
-
-
 # Set the docker image to run as the GHA user
 USER GHA
 
