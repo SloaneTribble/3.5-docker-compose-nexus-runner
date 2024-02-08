@@ -10,7 +10,6 @@ services:
     # if container served any other purposes, it wouldn't be great to mount entire /opt folder as a volume
       -  nexus-config:/opt
 
-
   runner:
     build:
       context: ./runner
