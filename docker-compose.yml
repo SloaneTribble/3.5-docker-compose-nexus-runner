@@ -6,6 +6,9 @@ services:
     build: ./nexus
     ports:
     - "8081:8081"
+    volumes:
+    # if container served any other purposes, it wouldn't be great to mount entire /opt folder as a volume
+      -  nexus-config:/opt
 
 
   runner:
@@ -13,4 +16,8 @@ services:
       context: ./runner
     env_file: 
       - .env
+    links:
+      - "nexus"
 
+volumes:
+  nexus-config:
